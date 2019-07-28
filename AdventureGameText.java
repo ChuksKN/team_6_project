@@ -70,7 +70,7 @@ public class AdventureGameText  {
 		System.out.println("\n\t             <<Welcome to The Entity>>");
 		System.out.println("\t         *********************************");
 		System.out.println("\n");	
-		System.out.println("\t   You are stuck in a house, and must get out");
+		System.out.println("\t   You are stuck in a school, and must get out");
 		System.out.println("\tYou are shown using the 'X' character. Good luck!");
 		System.out.println("\n");		
 		System.out.println("\t   Press 'r' to run game or press 'q' to quit");
