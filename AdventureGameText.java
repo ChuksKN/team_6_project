@@ -29,7 +29,7 @@ public class AdventureGameText  {
 	 */
 	public AdventureGameText(Map aMap, Player aPlayer) {
 		map = aMap;
-		player = aPlayerl
+		player = aPlayer;
 	}
 	
 	/**
@@ -89,22 +89,12 @@ public class AdventureGameText  {
 		}
 		
 	}
-		
+	
+	
 	public static void main(String[] args) {
 		Map map = new Map();
 		Player player = new Player();
+		
 	}
-	
 }
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
