@@ -7,27 +7,30 @@ public class Map {
 	private static final int ROW_SIZE = 10;
 	private static final int COLUMN_SIZE = 50;
 	
-	private char [][] grid = new char [ROW_SIZE][COLUMN_SIZE];	//provide constants for grid size
+	private char [][] grid;
+	
+	
+	public Map(char[][] startConfiguration){
+		grid = startConfiguration;
+	}
+	
+	public Map(Map toCopy) {
+		grid = toCopy.grid;
+	}
+	
 	
 	/**
 	 * Method displayGrid displays the grid
 	 * @param None
 	 */
 	public void displayGrid() {
-        for (int i = 0; i < grid.length; i++){
-            for ( int j = 0; j < grid[i].length; j++){
-                grid[i][j] = '-';
-            }
-        }
+		grid = new char [ROW_SIZE][COLUMN_SIZE];
+        	for (int row = 0; row < ROW_SIZE; row++){
+            	for ( int col = 0; col < COLUMN_SIZE; col++){
+                	grid[row][col] = '-';
+           		}
+        	}
          
-        for (int i = 0; i < grid.length; i++){
-            System.out.println();
-            for ( int j = 0; j < grid[i].length; j++){
-                System.out.print(grid[i][j]);
-            }
-        }
-    }
-    
     /**
      * Method placeCollectible places an item from the Collectible class (notes, chests, keys) at
      * a certain location in the gird by specifying a row and a column
@@ -38,17 +41,20 @@ public class Map {
     		return grid[row][column] = item;
     	}
     }
-    
+    /**
+     * Method isEmpty checks to see if a certain location in the map is empty to place a
+     * collectible item.
+     * @param None
+     */
     public boolean isEmpty(int row, int column) {
-    	return grid[row][column] = '-';
+    	return grid[row][column] == '-';
     }
     
+    public void move(Location currentLocation, Direction direction) {}
+    //TO DO
     
-    	
-    
-    
-    
-    
-
+    public boolean isValidMove(Location currentLocation, Direction direction) {}
+    //TO DO 
 
 }
+
