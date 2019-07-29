@@ -9,6 +9,7 @@ public class Map {
 	
 	private char [][] grid;
 	
+	public Map() {}
 	
 	public Map(char[][] startConfiguration){
 		grid = startConfiguration;
