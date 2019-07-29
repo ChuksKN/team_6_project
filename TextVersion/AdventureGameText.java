@@ -25,7 +25,8 @@ public class AdventureGameText  {
 	
 	/**
 	 * Constructor takes references from Map and Player and assigns them to the instance variables
-	 * @param aMap and aPlayer a map of type Map and a player of type Player
+	 * @param aMap the map
+	 * @param aPlayer aPlayer a player that represents the user
 	 */
 	public AdventureGameText(Map aMap, Player aPlayer) {
 		map = aMap;
@@ -34,7 +35,7 @@ public class AdventureGameText  {
 	
 	/**
 	 * Copy constructor that copies the values an existing object 
-	 * @param toCopy an existing object
+	 * @param toCopy a copy of an existing object
 	 */
 	public AdventureGameText(AdventureGameText toCopy) {
 		map = toCopy.map;
@@ -70,7 +71,7 @@ public class AdventureGameText  {
 		System.out.println("\n\t             <<Welcome to The Entity>>");
 		System.out.println("\t         *********************************");
 		System.out.println("\n");	
-		System.out.println("\t   You are stuck in a house, and must get out");
+		System.out.println("\t You are stuck in a school, and must get out");
 		System.out.println("\tYou are shown using the 'X' character. Good luck!");
 		System.out.println("\n");		
 		System.out.println("\t   Press 'r' to run game or press 'q' to quit");
