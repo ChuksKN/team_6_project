@@ -14,7 +14,8 @@ public class Location {
 	/**
 	
 	 * Constructor takes an argument for row and column and assigns them to the instance variables
-	 * @param aRow, Col a row and a column 
+	 * @param aRow a row
+	 * @param aCol a column
 	 */
 	public Location(int aRow, int aCol) {
 		row = aRow;
@@ -23,7 +24,7 @@ public class Location {
 	
 	/**
 	 * Copy constructor that copies the values an existing object 
-	 * @param toCopy an existing object
+	 * @param toCopy a copy of an existing object
 	 */
 	public Location(Location toCopy) {
 		row = toCopy.row;
