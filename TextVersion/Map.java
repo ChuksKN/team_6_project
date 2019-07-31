@@ -6,6 +6,7 @@
 public class Map {
 	private static final int ROW_SIZE = 10;
 	private static final int COLUMN_SIZE = 50;
+	private Room aRoom;
 	
 	private char [][] grid;
 	
@@ -56,6 +57,8 @@ public class Map {
     
     public boolean isValidMove(Location currentLocation, Direction direction) {}
     //TO DO 
+
+public int placeRoom(Location ....
 
 }
 
