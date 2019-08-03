@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Collectible {
 	//Here we store the key and note strings.
-	String[] keys = {"keyA1B1", "keyA2B1", "keyB1C1", "keyB1C2"};
+	String[] keys = {"key1", "key"};
+	String[] chests = {"chest1", "chest2"};
 	String[] notes = {"note1", "note2"};
 	
 	//Here we add the the key strings into their list.
@@ -18,8 +19,14 @@ public class Collectible {
 	for(String noteAsset: notes) {
 		noteList.add(noteAsset);
 		}
+	//Here we add the chest strings into their list
+	List<String> chestList = new ArrayList<String>();
+	for(String chestAsset: chests) {
+		chestList.add(chestAsset);
+		}
 	
-	//IMPORTANT NOTE: Missing a "getRoom" method.
+	
+	
 	
 	
 	public Collectible(String Room, int Xcoordinate, int Ycoordinate, String itemType, int itemIndex) {
