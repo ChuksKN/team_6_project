@@ -1,8 +1,8 @@
 enum Direction {
 
-	LEFT,
-	RIGHT,
-	UP,
-	DOWN,
+	A,	//left
+	D,	//right
+	S,	//down
+	W,	//up
 	
 }
