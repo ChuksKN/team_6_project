@@ -73,14 +73,14 @@ public class AdventureGameText  {
 		System.out.println("\tYou are shown using the 'X' character. Good luck!");
 		System.out.println("\n");		
 		System.out.println("\t   Press 'r' to run game or press 'q' to quit");
-		System.out.println("\t 'a' = left, 'd' = right, 'w' = up, 's' = down");
+		System.out.println("\t 'A' = left, 'D' = right, 'W' = up, 'S' = down");
 		System.out.println("\n");	
 		System.out.println("\t         *********************************");
 		System.out.println("\n");
 		
 		Scanner kb = new Scanner(System.in);
 		char ch = kb.nextLine();
-		if (ch != q) {
+		if (ch != 'q') {
 			play();
 		} else {
 			System.out.print("\tThanks for Playing!");
