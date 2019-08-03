@@ -10,7 +10,7 @@ public class Player {
 	private char player = 'X';
 	private ArrayList<Collectible> item;
 	private Direction direction;
-	private Location location = new [0][0];
+	private Location location = new [5][25];
 	
 	/*
 	 * Default constructor - takes no arguments
