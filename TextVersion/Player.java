@@ -1,4 +1,10 @@
+package text;	
+
+import gui.*;	//future package
+import logic.*; //future package
+
 import java.util.ArrayList;
+
  
 /**
  * Class Player contains the code for the character that the user controls and moves around 
