@@ -71,13 +71,14 @@ public class Map {
 	 * collectible item.
     	 * @param None
     	 */
-    	public boolean isEmpty(int row, int column) {
-		return grid[row][column] == '-';
-    	}
+    	//public boolean isEmpty(int row, int column) {
+		//return grid[row][column] == '-';
+    	
     
-    	public void move(Location loc, Player player, Direction direction) {}
+    	public void move(Location loc, Player player, Direction direction) {
+		
     		if (direction == Direction.A) {
-			int newoRw = loc.row -= 1;
+			int newRow = loc.row -= 1;
 			player.setCurrentLocation(newRow);
 		
 			
@@ -98,7 +99,7 @@ public class Map {
 	}
 			
 			
-    	public boolean isValidMove(Location currentLocation, Direction direction) {}
+    	public boolean isValidMove(Location currentLocation, Direction direction) {} //checks to see if obstacle is hit
     	//TO DO 
 
 
