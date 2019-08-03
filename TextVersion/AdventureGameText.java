@@ -93,7 +93,7 @@ public class AdventureGameText  {
 	public static void main(String[] args) {
 		Map map = new Map();
 		Player player = new Player();
-		AdventureGameText game = new AdventureGameText();
+		AdventureGameText game = new AdventureGameText();	//current iteration of the game
 		game.mainMenu();
 		
 	}
