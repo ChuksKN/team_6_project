@@ -6,8 +6,6 @@ import logic.*; //future package
 import java.util.Random;
 import java.util.Scanner;
 
-
-
 /** 
  * Class AdventureGameText controls the entire application.
  * It creates one instance for Map and Player called map and playerInfo, respectively. 
@@ -95,6 +93,8 @@ public class AdventureGameText  {
 	public static void main(String[] args) {
 		Map map = new Map();
 		Player player = new Player();
+		AdventureGameText game = new AdventureGameText();
+		game.mainMenu();
 		
 	}
 }
