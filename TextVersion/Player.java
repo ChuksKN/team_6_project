@@ -30,9 +30,9 @@ public class Player {
 	 * @param aPlayer a player that represents the user
 	 * @param aLocation the current location
 	 */
-	public Player(ArrayList<Collectible> anItem, char aPlayer, Location startLocation) { //UPDATE
-		item = anItem;
-		character = aCharacter;
+	public Player(char aPlayer, Location startLocation) { //UPDATE
+		item = new ArrayList<Collectible>;
+		player = aPlayer;
 		location = startLocation;
 	}
 	
@@ -42,7 +42,7 @@ public class Player {
 	 */
 	public Player(Player toCopy) { //UPDATE
 		item = toCopy.item;
-		character = toCopy.character;
+		player = toCopy.player;
 		location = toCopy.location;
 	}
 	
