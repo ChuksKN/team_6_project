@@ -47,8 +47,8 @@ public class Map {
            		}
         	}
 	}
-   	 public void placePlayer(Player player, int row, int col) {
-	 	grid[10][1] = 'X'; 
+   	 public void placePlayer() {
+	 	grid[10][1] = 'X'; //starting position for player
 	 }
 	
 	public void placeObstacle(String obstacle) {}
@@ -58,7 +58,7 @@ public class Map {
 	
     	/**
      	* Method placeCollectible places an item from the Collectible class (notes, chests, keys) at
-     	* a certain location in the gird by specifying a row and a column
+     	* a certain location in the grid by specifying a row and a column
      	* @param None
      	*/
     	public void placeCollectible(Collectible item, int row, int column) {
@@ -93,9 +93,9 @@ public class Map {
 			int newCol = loc.col -= 1;
 			player.setCurrentLocation(newCol)
 			
-		} else if (direction.equals("W")) {
+		} 
 			
-		}
+		
 	}
 			
 			
