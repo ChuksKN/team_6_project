@@ -46,7 +46,7 @@ public class AdventureGameText  {
 	 */
 	public void play() {	
 	
-		displayGrid(); 
+		map.displayGrid(); 
 		
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter your move: ");
