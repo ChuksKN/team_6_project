@@ -7,7 +7,7 @@ public class Inventory {
 
     private Player player;
     private Collectible item;
-    private ArrayList<Strings> items;
+    private ArrayList<Strings> inv;
     
    /*
 	* Default constructor - takes no arguments
