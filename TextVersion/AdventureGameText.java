@@ -52,7 +52,7 @@ public class AdventureGameText  {
 		System.out.println("Enter your move: ");
 		char ch = kb.nextLine();
 		
-		while (ch != q) {
+		while (ch != 'q') {
 			map.move(ch);
 			System.out.println("Enter your move: ");
 			char ch = kb.nextLine();
