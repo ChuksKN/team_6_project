@@ -4,23 +4,23 @@
  * It contains one instance variable named grid that is made up of an array of characters.
  */
 public class Map {
-	private static final int ROW_SIZE = 10;
-	private static final int COLUMN_SIZE = 50;
+	private int rowSize = 10;
+	private int colSize = 50;
+	
 	private char [][] grid;
+	
 	private Player player;
 	private Location location;
 	private Direction direction;
 	private Collectible collectible;
+	
 	private String obstacle;
 	
 	public Map() {}
 	
-	public Map(Map toCopy) {}
-	//TO DO 
-	
-	public Map(int rowSize, int colSize,char[][] startConfiguration, Player aPlayer, Location aLocation, Direction aDirection, Collectible anItem, String obs) {
-		ROW_SIZE = rowSize;
-		COLUMN_SIZE = colSize;
+	public Map(int row, int col,char[][] startConfiguration, Player aPlayer, Location aLocation, Direction aDirection, Collectible anItem, String obs) {
+		rowSize = row;
+		colSize = col;
 		grid = startConfiguration;
 		player = aPlayer;
 		location = aLocation;
@@ -29,9 +29,16 @@ public class Map {
 		obstacle = obs;
 	}
 	
+	public Map(Map toCopy) {}
+	//TO DO 
+	
 	public String getObstacle() {
 		String obstacle = "\";
 		return obstacle;
+	}
+	
+	public void setObstacle(String anObstacle) {
+		obstacle = anObstacle;
 	}
 	
 	
@@ -40,13 +47,14 @@ public class Map {
 	 * @param None
 	 */
 	public void displayGrid() {
-		grid = new char [ROW_SIZE][COLUMN_SIZE];
-        	for (int row = 0; row < ROW_SIZE; row++){
-            	for ( int col = 0; col < COLUMN_SIZE; col++){
+		grid = new char [rowSize][colSize];
+        	for (int row = 0; row < rowSize; row++){
+            	for ( int col = 0; col < colSize; col++){
                 	grid[row][col] = '-';
            		}
         	}
 	}
+	
    	 public void placePlayer() {
 	 	grid[10][1] = 'X'; //starting position for player
 	 }
@@ -62,7 +70,7 @@ public class Map {
      	* @param None
      	*/
     	public void placeCollectible(Collectible item, int row, int column) {
-    		if  (row <= ROW_SIZE && column <= COLUMN_SIZE) {
+    		if  (row <= rowSize && column <= colSize) {
     			grid[row][column] = item;
     		}
     	}
@@ -79,7 +87,7 @@ public class Map {
 		
     		if (direction == Direction.A) {
 			int newRow = loc.row -= 1;
-			player.setCurrentLocation(newRow);
+			player.setCurrentLocation(newRow); //add this method in Player class
 		
 			
 		} else if (direction == Direction.D) {
