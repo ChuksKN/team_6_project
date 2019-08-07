@@ -25,7 +25,7 @@ public class Collectible {
 		chestList.add(chestAsset);
 		}
 	
-	//method to check if we can use the item, same for different types
+	//method to check if we can use the item once we find it, same for different types
 	
 	public void findItem(String item) {
 		if item.equals("note1") {
