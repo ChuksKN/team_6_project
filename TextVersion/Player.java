@@ -30,10 +30,12 @@ public class Player {
 	 * @param aPlayer a player that represents the user
 	 * @param aLocation the current location
 	 */
-	public Player(char aPlayer, Location startLocation) { //UPDATE
+	public Player(char aPlayer, Direction aDirection, Location startLocation) { 
 		item = new ArrayList<Collectible>;
 		player = aPlayer;
+		direction = aDirection;
 		location = startLocation;
+		item = new ArrayList<Collectible>();
 	}
 	
 	/**
@@ -43,6 +45,7 @@ public class Player {
 	public Player(Player toCopy) { //UPDATE
 		item = toCopy.item;
 		player = toCopy.player;
+		direction = toCopy.direction;
 		location = toCopy.location;
 	}
 	
@@ -57,7 +60,7 @@ public class Player {
 	public void itemsPicked() {}
 		// TO DO
 	
-	public Location getLocation() { //player's current location
+	public Location getCurrentLocation() { //player's current location
 		return location;
 	}
 	public void setLocation(Location aLocation) {
