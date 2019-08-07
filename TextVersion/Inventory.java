@@ -7,7 +7,7 @@ public class Inventory {
 
     private Player player;
     private Collectible item;
-    private ArrayList<Strings> inv;
+    private ArrayList<String> inv;
     
    /*
 	* Default constructor - takes no arguments
@@ -21,15 +21,17 @@ public class Inventory {
 	 */
     public Inventory(Inventory toCopy) {
             player = toCopy.player;
-            items = toCopy.items;
+            item = toCopy.item;
+	    inv = toCopy.inv;
     }
     
     /**
 	 * Constructor takes arguments for player assigns it to the instance variable, and initializes the inventory
 	 * @param player the player 
 	 */
-    public Inventory(Player player) {
+    public Inventory(Player player, Collectible collectible) {
         this.player = player;
+	item = collectible; 
         inv = new ArrayList<Strings>();
     }
     
