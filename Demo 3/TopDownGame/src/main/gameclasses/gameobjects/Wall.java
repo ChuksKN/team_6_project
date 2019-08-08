@@ -4,16 +4,16 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import main.gameclasses.GameObjects;
-import main.gameclasses.SpriteSheet;
-import main.gameclasses.utils.ID;
+import main.gameclasses.Objects;
+import main.gameclasses.Sprites;
+import main.gameclasses.utils.ObjID;
 
-/*
+/**
  * This is the Wall (boundary) class
  */
-public class Wall extends GameObjects {
+public class Wall extends Objects {
 	
-	public Wall(int x, int y, ID objId, SpriteSheet newSprite) {
+	public Wall(int x, int y, ObjID objId, Sprites newSprite) {
 		super(x, y, objId, newSprite);
 	}
 

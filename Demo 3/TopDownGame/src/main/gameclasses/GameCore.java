@@ -1,19 +1,20 @@
 package main.gameclasses;
 import java.awt.Canvas;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import main.gameclasses.gameobjects.Chest;
-import main.gameclasses.gameobjects.Player;
+import main.gameclasses.gameobjects.PlayerChar;
 import main.gameclasses.gameobjects.Wall;
-import main.gameclasses.utils.ID;
+import main.gameclasses.utils.GameSTATES;
+import main.gameclasses.utils.ObjID;
 
-/*
- * Credit for code referencing - Author: Marcus Dubreuil
- * 				Web address: https://marcusman.com/
+/**
+ * Credit for Code referencing - Author: Marcus Dubreuil
+ * 								 Web address: https://marcusman.com/
  * 		
  * This class serves as the core game engine
  * 
@@ -21,28 +22,41 @@ import main.gameclasses.utils.ID;
  * 		Determines the window dimensions
  * 		Controls the game's start and stop parameters
  * 		Initializes the game loop engine that updates the game as it is ran and played
+ * 
+ * @author Chuks N.
+ * @version 1.0
+ * @since 2019-08-07
  */
 
 public class GameCore extends Canvas implements Runnable {
 	
+	// Width and Title variables are not private to allow access by the GameMenu class
+	
 	private static final long serialVersionUID = 1L;
 	
-	private static final int WIDTH = 1000, HEIGHT = WIDTH * 3/4;
-	private static String TITLE = "The Entity...";
+	static final int WIDTH = 1000;
+
+	private static final int HEIGHT = WIDTH * 3/4;
+	static String TITLE = "The Entity...";
 	
 	private boolean isRunning = false;
 	private Thread thread;
 	private ObjectHandler objHandler;
-	private SpriteSheet newSprite;
-	private SpriteSheet tileSprite;
+	private Sprites newSprite;
+	private Sprites tileSprite;
 	
 	private BufferedImage level = null;
+	private BufferedImage menuBackdrop = null;
 	private BufferedImage sprite_sheet = null;
 	private BufferedImage tile = null;
 	
 	private BufferedImage firstTile = null;
 	
 	private Camera povCam;
+	private GameMenu Menu;
+	
+	// Determines game state; Menu or Gameplay
+	public static GameSTATES curState = GameSTATES.Gameplay;
 	
 	public GameCore() {
 		new WindowUI(WIDTH, HEIGHT, TITLE, this);
@@ -50,16 +64,19 @@ public class GameCore extends Canvas implements Runnable {
 		
 		objHandler = new ObjectHandler();
 		povCam = new Camera(0,0);
+		Menu = new GameMenu();
 		this.addKeyListener(new UseKeys(objHandler));
 		
 		ImageLoader imgLoader = new ImageLoader();
 		level = imgLoader.loadImage("/dem2_testbackdropver2.png");
 		
 		sprite_sheet = imgLoader.loadImage("/Char_All_tweak.png");
-		newSprite = new SpriteSheet(sprite_sheet);
+		newSprite = new Sprites(sprite_sheet);
 		
 		tile = imgLoader.loadImage("/Floor_SS.png");
-		tileSprite = new SpriteSheet(tile);
+		tileSprite = new Sprites(tile);
+		
+		menuBackdrop = imgLoader.loadImage("/Test_backdrop.jpg");
 		
 		firstTile = tileSprite.grabFloorSprite(2, 1, 32, 32);
 		
@@ -73,21 +90,11 @@ public class GameCore extends Canvas implements Runnable {
 		thread.start();
 	}
 	
-	// Method that tells the game to stop running
-	private void stop() {
-		isRunning = false;
-		try {
-			thread.join();
-		}
-		catch (InterruptedException ErrorOne){
-			ErrorOne.printStackTrace();
-		}
-	}
-	
 	public void run() {
-		/*
+		/**
 		 * Game Loop (Code Credit)
-		 * 		Author: Markus Alexej Persson (A.K.A: Notch)
+		 * 
+		 * @author Markus Alexej Persson (A.K.A: Notch)
 		 */
 		
 		this.requestFocus();
@@ -103,7 +110,7 @@ public class GameCore extends Canvas implements Runnable {
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			while(delta >= 1) {
-				tick();
+				update();
 				delta--;
 			}
 			render();
@@ -118,14 +125,15 @@ public class GameCore extends Canvas implements Runnable {
 	}
 	
 	// Visually updates all game items (Updated ~60 times/sec)
-	public void tick() {
+	public void update() {
 		
-		for (int i = 0; i < objHandler.object.size(); i++) {
-			if (objHandler.object.get(i).getObjID() == ID.Player) {
-				povCam.tick(objHandler.object.get(i));
+		if (curState == GameSTATES.Gameplay) {
+			for (int i = 0; i < objHandler.object.size(); i++) {
+				if (objHandler.object.get(i).getObjID() == ObjID.Player) {
+					povCam.tick(objHandler.object.get(i));
+				}
 			}
 		}
-		
 		objHandler.tick();
 	}
 	
@@ -138,37 +146,51 @@ public class GameCore extends Canvas implements Runnable {
 		}
 		
 		Graphics renderGraphic = bufferOne.getDrawGraphics();
-		Graphics2D render2D = (Graphics2D) renderGraphic;
 		
-		/// Section below serves as Canvas, where all game objects are rendered ///
-		
-		
+		renderGraphic.drawImage(menuBackdrop, 0, 0, this);
 		/*
 		 * Note: Make sure objects are initialized first,
 		 * 		 so they render AFTER the background
 		 */
-		
-		render2D.translate(-povCam.getX(), -povCam.getY());
-		
-		// Background Sprite rendering loop
-		for (int xx = 0; xx < 30*72; xx+=30) {
-			for (int yy = 0; yy < 30*72; yy+=30) {
-				renderGraphic.drawImage(firstTile, xx, yy, null);
+		if (curState == GameSTATES.Gameplay) {
+			
+			Graphics2D render2D = (Graphics2D) renderGraphic;
+			
+			render2D.translate(-povCam.getX(), -povCam.getY());
+			
+			// Background Sprite rendering loop
+			for (int xx = 0; xx < 30*72; xx+=30) {
+				for (int yy = 0; yy < 30*72; yy+=30) {
+					renderGraphic.drawImage(firstTile, xx, yy, null);
+				}
 			}
+			
+			objHandler.render(renderGraphic);
+			render2D.translate(povCam.getX(), povCam.getY());	
 		}
 		
-		objHandler.render(renderGraphic);
-		render2D.translate(povCam.getX(), povCam.getY());
-		
-		///////////////////////////////////////////////////////////////////////////
-		
+		else if (curState == GameSTATES.Menu) {
+			Menu.render(renderGraphic);
+		}
 		renderGraphic.dispose();
 		bufferOne.show();
 		
 	}
 	
-	// Level loading method
+	// Method that tells the game to stop running
+	private void stop() {
+		isRunning = false;
+		try {
+			thread.join();
+		}
+		catch (InterruptedException ErrorOne){
+			ErrorOne.printStackTrace();
+		}
+	}
+	
 	/*
+	 * Level loading method
+	 * 
 	 * Loads and sets all game level items based on their designated colors
 	 * in the game map
 	 */
@@ -182,15 +204,15 @@ public class GameCore extends Canvas implements Runnable {
 				int red = (pixel >> 16) & 0xff;
 				int green = (pixel >> 8) & 0xff;
 				int blue = (pixel) & 0xff;
-				
+	
 				if (red == 255)
-					objHandler.addObject(new Wall(xx*32, yy*32, ID.Wall, newSprite));
+					objHandler.addObject(new Wall(xx*32, yy*32, ObjID.Wall, newSprite));
 				
 				if (blue == 255)
-					objHandler.addObject(new Player(xx*16, yy*20, ID.Player, objHandler, newSprite));
+					objHandler.addObject(new PlayerChar(xx*16, yy*20, ObjID.Player, objHandler, newSprite));
 				
 				if (green == 255)
-					objHandler.addObject(new Chest(xx*32, yy*32, ID.Chest, objHandler, newSprite));
+					objHandler.addObject(new Chest(xx*32, yy*32, ObjID.Chest, objHandler, newSprite));
 			}
 		}
 	}

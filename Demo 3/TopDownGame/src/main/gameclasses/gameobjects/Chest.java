@@ -3,19 +3,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import main.gameclasses.GameObjects;
+import main.gameclasses.Objects;
 import main.gameclasses.ObjectHandler;
-import main.gameclasses.SpriteSheet;
-import main.gameclasses.utils.ID;
+import main.gameclasses.Sprites;
+import main.gameclasses.utils.ObjID;
 
-/*
+/**
  * This is the Chest item class; Chests are iteractable objects
  */
-public class Chest extends GameObjects{
+public class Chest extends Objects{
 	
 	private ObjectHandler objHandler;
 
-	public Chest(int x, int y, ID objID, ObjectHandler objHandler, SpriteSheet newSprite) {
+	public Chest(int x, int y, ObjID objID, ObjectHandler objHandler, Sprites newSprite) {
 		super(x, y, objID, newSprite);
 		this.objHandler = objHandler;
 	}

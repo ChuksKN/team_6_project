@@ -3,9 +3,8 @@ package main.gameclasses;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
-/*
- * This class initialises the game window and sets its parameters
- * 
+/**
+ * This class initializes the game window and sets its parameters
  * Functionality:
  * 		Initializes new window to contain game
  * 		Sets window constraints, such as:
@@ -13,6 +12,11 @@ import javax.swing.JFrame;
  * 			> Ability to be resized
  * 			> Visibility
  * 			> Location
+ * 
+ * @param width This is the width of the window
+ * @param height This is the height of the window
+ * @param title This is the title of the game, it will go in the window
+ * @param game This is the game
  */
 
 public class WindowUI {

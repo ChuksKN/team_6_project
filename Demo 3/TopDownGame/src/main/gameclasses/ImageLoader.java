@@ -6,6 +6,8 @@ import javax.imageio.ImageIO;
 
 /*
  * This class manages the loading of images onto the window
+ * 
+ * Credit for Code referencing - Author: Zack Berenger
  */
 public class ImageLoader {
 	
@@ -13,7 +15,6 @@ public class ImageLoader {
 	
 	// Method used to get the image from its file path;
 	// try-catch statement is to address a possible IOException error
-	
 	public BufferedImage loadImage (String path) {
 		
 		try {
