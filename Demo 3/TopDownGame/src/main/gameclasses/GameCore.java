@@ -12,8 +12,8 @@ import main.gameclasses.gameobjects.Wall;
 import main.gameclasses.utils.ID;
 
 /*
- * Credit for code referencing - Author: Zack Berenger
- * 								 Web address: https://www.codingmadesimple.com/about/
+ * Credit for code referencing - Author: Marcus Dubreuil
+ * 				Web address: https://marcusman.com/
  * 		
  * This class serves as the core game engine
  * 
