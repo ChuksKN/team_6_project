@@ -7,7 +7,6 @@ import javax.imageio.ImageIO;
 /*
  * This class manages the loading of images onto the window
  * 
- * Credit for Code referencing - Author: Zack Berenger
  */
 public class ImageLoader {
 	
