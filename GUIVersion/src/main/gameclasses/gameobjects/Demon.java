@@ -54,7 +54,7 @@ public class Demon extends Objects {
 				dY = y - tempObject.getY() - demH;
 				enemySight = (float) Math.sqrt((x - tempObject.getX()) * (x - tempObject.getX()) + (y - tempObject.getY()) * (y - tempObject.getY()));
 				
-				if (enemySight < 225) {
+				if (enemySight < 220) {
 					velX = ((-2 / enemySight) * dX);
 					velY = ((-2 / enemySight) * dY);
 				}
