@@ -23,7 +23,7 @@ public class Demon extends Objects {
 	Random moveDir = new Random();
 	private float enemySight, dX, dY;
 	
-	int demW = 12;
+	int demW = 20;
 	int demH = 20;
 	
 	public Demon(int x, int y, ObjID objID, ObjectHandler objHandler, Sprites newSprite) {
@@ -54,7 +54,7 @@ public class Demon extends Objects {
 				dY = y - tempObject.getY() - demH;
 				enemySight = (float) Math.sqrt((x - tempObject.getX()) * (x - tempObject.getX()) + (y - tempObject.getY()) * (y - tempObject.getY()));
 				
-				if (enemySight < 220) {
+				if (enemySight < 225) {
 					velX = ((-2 / enemySight) * dX);
 					velY = ((-2 / enemySight) * dY);
 				}
@@ -71,7 +71,7 @@ public class Demon extends Objects {
 	}
 
 	public Rectangle getColBounds() {
-		return new Rectangle(x-10, y-10, 40, 40);
+		return new Rectangle(x-10, y-10, 38, 38);
 	}
 	
 
