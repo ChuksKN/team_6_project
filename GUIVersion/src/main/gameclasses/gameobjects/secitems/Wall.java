@@ -29,7 +29,7 @@ public class Wall extends Objects {
 
 	// Sets the collision bounding for the walls
 	public Rectangle getColBounds() {
-		return new Rectangle(x, y, 30, 20);
+		return new Rectangle(x, y, 20, 20);
 	}
 
 }
