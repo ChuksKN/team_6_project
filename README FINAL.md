@@ -47,6 +47,6 @@ Current version 4.0.0
 ## Acknowledgments
 Thanks to everyone, including Hosain Bari and Dr. Nathaly Verwaal, that helped us in the making of this game.
 
-Special thanks to Marcus Dubreuil (marcusman.com), for his tutorials, as cited.
+Thanks to Marcus Dubreuil (marcusman.com), for his tutorials, as cited.
 
 > Written with [StackEdit](https://stackedit.io/).
