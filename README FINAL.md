@@ -15,7 +15,7 @@ The following are required to install this game:
 
 ## Compile and Run
 
- 1. Grab the project out of the repo listed above. It is named "**TOPDOWN FINAL**"
+ 1. Grab the project out of the repo listed above. It is named "**GUIVersion**"
  2. Open your installation of Eclipse
  3. Open the file explorer and copy and paste the project to your workspace. If using default settings, this will be in the following: Local Disk > Users > "*your account name*" > eclipse-workspace
  4. Go to Eclipse, and open projects from file system from the file menu
@@ -24,7 +24,7 @@ The following are required to install this game:
  7. Click the *down arrow* beside the project you selected
  8. You will see a *src* folder, click the down arrow beside it
  9. You can now see every class and review the code
- 10. To run, simply hit the run button in the top bar (be sure the res files are there as well, otherwise a blank window will pop up)
+ 10. To run, simply select the project (left click) hit the "Run" button in the top bar of Eclipse (be sure all res files are available)
  11. To close, hit the **X** on the window  
 
 ## Running Tests
