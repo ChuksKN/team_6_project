@@ -1,6 +1,6 @@
 ﻿## THE ENTITY
 
-CPSC 233 Tutorial 02 Team 6 project Demo 3. This is the *unfinished* graphical version. The player will move up, down, left, and right, to find objects and escape the rooms. Some art assets have been added. 
+CPSC 233 Tutorial 02 Team 6 project Final Version. This is the *finished* graphical version. The player will move up, down, left, and right, to find keys, avoid enemies/projectiles, and escape the school before their life runs out. 
 
 ## Getting Started
 In order to run this program for development, download the files from our github repository and add them to your workspace. After this, simply import the project. We used eclipse, and as such we recommend the same. Steps to do this are listed below.
@@ -15,9 +15,9 @@ The following are required to install this game:
 
 ## Compile and Run
 
- 1. Grab the project out of the repo listed above. It is named "Demo 2"
+ 1. Grab the project out of the repo listed above. It is named "**TOPDOWN FINAL**"
  2. Open your installation of Eclipse
- 3. Open the file explorer and copy and paste the project to your workspace. If using default settings, this will be in the following: Local Disk > Users > "your account name" > eclipse-workspace
+ 3. Open the file explorer and copy and paste the project to your workspace. If using default settings, this will be in the following: Local Disk > Users > "*your account name*" > eclipse-workspace
  4. Go to Eclipse, and open projects from file system from the file menu
  5. Find the project in the eclipse-workspace folder mentioned above
  6. The folder will now be in the navigator
@@ -25,7 +25,7 @@ The following are required to install this game:
  8. You will see a *src* folder, click the down arrow beside it
  9. You can now see every class and review the code
  10. To run, simply hit the run button in the top bar (be sure the res files are there as well, otherwise a blank window will pop up)
- 11. To close, hit the *X* on the window  
+ 11. To close, hit the **X** on the window  
 
 ## Running Tests
 The Junit test is still being worked on. When this is available, more will be added here.
@@ -38,15 +38,15 @@ To run the test:
  4. The class 'Camera' should have now ran as a test, and shown any test fails and errors
 
 ## Contributions
-Team members: Bobby, Kay, Aiyo, Chuks, Aly
+**Team members:** Bobby, Kay, Ayo, Chuks, Aly
 
 ## Versioning
-Current version 3.0.0
+Current version 4.0.0
 
 
 ## Acknowledgments
-We realize that the code is incomplete, and there will be 1 more future update to complete it. The code is running now with a few art assets being used, we have to add in more art assets, and a bigger map. A start menu is also close to being completed and added.
-Thanks to anyone who has provided help.
+Thanks to everyone, including Hosain Bari and Dr. Nathaly Verwaal, that helped us in the making of this game.
 
+Special thanks to Marcus Dubreuil (marcusman.com), for his tutorials, as cited.
 
 > Written with [StackEdit](https://stackedit.io/).
