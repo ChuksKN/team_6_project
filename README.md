@@ -10,7 +10,7 @@ The following are required to install this game:
 
  - Access to a computer
  - Access to github (our github link: [https://github.com/Widget-Hub/team_6_project)
- - A text editor that can edit and run the program (ex: eclipse, available at eclipse.org)
+ - Eclipse IDE (available at eclipse.org)
  - Java version 8 (available at oracle.com)
 
 ## Compile and Run
